@@ -463,7 +463,7 @@ finalconfig() {
 	exec 3>&1
 	REVISIT=$(dialog --backtitle "Skyron Installer" \
 	    --title "Final Configuration" --no-cancel --menu \
-	    "Setup of your pfSense system is nearly complete. You can now modify your configuration choices. After this screen, you will have an opportunity to make more complex changes using a shell." 0 0 0 \
+	    "Setup of your Skyron system is nearly complete. You can now modify your configuration choices. After this screen, you will have an opportunity to make more complex changes using a shell." 0 0 0 \
 		"Exit" "Apply configuration and exit installer" \
 		"Add User" "Add a user to the system" \
 		"Root Password" "Change root password" \
