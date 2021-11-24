@@ -63,7 +63,7 @@ for IF in $INTERFACES; do
 done
 
 if [ -z "$INTERFACES" ]; then
-	dialog --backtitle 'FreeBSD Installer' \
+	dialog --backtitle 'Skyron Installer' \
 	    --title 'Network Configuration Error' \
 	    --msgbox 'No network interfaces present to configure.' 0 0
 	exit 1

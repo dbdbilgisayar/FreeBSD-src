@@ -18,11 +18,11 @@ if ! mdconfig -l | grep -q md3; then
 	mount /dev/md3 /etc
 fi
 
-# Mount /dev/ufs/skyron_Install on factory to prevent USB stick disk used
+# Mount /dev/ufs/pfSense_Install on factory to prevent USB stick disk used
 # to boot to be shown as an option to install
-if [ -e /dev/ufs/skyron_Install -a ! -d /tmp/usb_install_media ]; then
+if [ -e /dev/ufs/pfSense_Install -a ! -d /tmp/usb_install_media ]; then
 	mkdir -p /tmp/usb_install_media
-	mount /dev/ufs/skyron_Install /tmp/usb_install_media
+	mount /dev/ufs/pfSense_Install /tmp/usb_install_media
 fi
 
 if [ -f /root/factory-pre.sh ]; then
@@ -74,7 +74,7 @@ export TERM
 
 if [ -f /etc/installerconfig ]; then
 	if bsdinstall script /etc/installerconfig; then
-		dialog --backtitle "Skyron Installer" --title "Complete" --no-cancel --ok-label "Reboot" --pause "Installation of skyron complete! Rebooting in 10 seconds" 10 30 10
+		dialog --backtitle "Skyron Installer" --title "Complete" --no-cancel --ok-label "Reboot" --pause "Installation of pfSense complete! Rebooting in 10 seconds" 10 30 10
 		reboot
 	else
 		dialog --backtitle "Skyron Installer" --title "Error" --textbox /tmp/bsdinstall_log 0 0
@@ -97,12 +97,12 @@ protected under United States and international copyright and trademark
 laws and treaties, and may not be used or reproduced without the prior
 express written permission of ESF and/or Netgate.
 
-"skyron" is a registered trademark of ESF, exclusively licensed to
+"pfSense" is a registered trademark of ESF, exclusively licensed to
 Netgate, and may not be used without the prior express written
 permission of ESF and/or Netgate. All other trademarks shown herein are
 owned by the respective companies or persons indicated.
 
-skyron(R) software is open source and distributed under the Apache 2.0
+pfSense(R) software is open source and distributed under the Apache 2.0
 license.  However, no commercial distribution of ESF and/or Netgate
 software is allowed without the prior written consent of ESF and/or
 Netgate.
@@ -165,7 +165,7 @@ if [ ! -f /tmp/buildroom ]; then
 fi
 
 IOPTS="\
-\"Install\" \"Install skyron\" \
+\"Install\" \"Install pfSense\" \
 \"Rescue Shell\" \"Launch a shell for rescue operations\""
 
 if [ -x /root/recover_configxml.sh ] ; then
@@ -188,9 +188,9 @@ case "$IMODE" in
 	fi
 
 	trap true SIGINT	# Ignore cntrl-C here
-	env ZFSBOOT_POOL_NAME=skyron bsdinstall
+	env ZFSBOOT_POOL_NAME=pfSense bsdinstall
 	if [ $? -eq 0 ]; then
-		dialog --backtitle "Skyron Installer" --title "Complete" --yes-label "Reboot" --no-label "Shell" --yesno "Installation of skyron complete! Would you like to reboot into the installed system now?" 0 0 && reboot
+		dialog --backtitle "Skyron Installer" --title "Complete" --yes-label "Reboot" --no-label "Shell" --yesno "Installation of pfSense complete! Would you like to reboot into the installed system now?" 0 0 && reboot
 		clear
 		echo "When finished, type 'exit' to reboot."
 		/bin/sh

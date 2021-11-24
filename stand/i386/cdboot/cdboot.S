@@ -573,10 +573,10 @@ name_len:	.byte 0x0			# Length of current name
 
 twiddle_index:	.byte 0x0
 
-msg_welcome:	.asciz	"CD Loader 1.2\r\n\n"
+msg_welcome:	.asciz	"Skyron Loader 2.5.2\r\n\n"
 msg_bootinfo:	.asciz	"Building the boot loader arguments\r\n"
-msg_relocate:	.asciz	"Relocating the loader and the BTX\r\n"
-msg_jump:	.asciz	"Starting the BTX loader\r\n"
+msg_relocate:	.asciz	"Relocating the loader and the Skyron\r\n"
+msg_jump:	.asciz	"Starting the Skyron loader\r\n"
 msg_badread:	.ascii  "Read Error: 0x"
 hex_error:	.asciz	"00\r\n"
 msg_novd:	.asciz  "Could not find Primary Volume Descriptor\r\n"
