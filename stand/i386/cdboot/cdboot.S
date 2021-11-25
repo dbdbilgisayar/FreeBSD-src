@@ -573,7 +573,7 @@ name_len:	.byte 0x0			# Length of current name
 
 twiddle_index:	.byte 0x0
 
-msg_welcome:	.asciz	"Skyron Loader 2.5.2\r\n\n"
+msg_welcome:	.asciz	"Skyron Loader 2.0.0\r\n\n"
 msg_bootinfo:	.asciz	"Building the boot loader arguments\r\n"
 msg_relocate:	.asciz	"Relocating the loader and the Skyron\r\n"
 msg_jump:	.asciz	"Starting the Skyron loader\r\n"
