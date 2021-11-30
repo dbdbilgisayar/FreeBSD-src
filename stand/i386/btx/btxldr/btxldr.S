@@ -370,11 +370,11 @@ gdtdesc:	.word gdt.1-gdt-1		# Limit
 /*
  * Messages.
  */
-m_logo: 	.asciz " \nSkyron loader 2.0.0     \n"
-m_vers: 	.asciz "Skyron version is 2.5.2\n"
-e_fmt:		.asciz "Error: Client format not supported \n"
+m_logo: 	.asciz " \nSkyron BTX loader 1.00  "
+m_vers: 	.asciz "Skyron BTX version is \0\n"
+e_fmt:		.asciz "Error: Client format not supported\n"
 #ifdef BTXLDR_VERBOSE
-m_mem:		.asciz "Skyron Starting in protected mode (base mem=\0)\n"
+m_mem:		.asciz "Starting in protected mode (base mem=\0)\n"
 m_esp:		.asciz "Arguments passed (esp=\0):\n"
 m_args: 	.asciz "<howto="
 		.asciz " bootdev="
